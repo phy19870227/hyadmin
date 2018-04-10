@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title sec:authentication="name"></title>
+</head>
+<body>
+<h1 th:text="${pageView.data.title}"></h1>
+<p class="bg-primary" th:text="${pageView.data.content}"></p>
+<div sec:authorize="hasRole('ROLE_superadmin')">
+    <p th:text="${pageView.data.extraInfo}"></p>
+</div>
+<span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="注销"/>
+</form>
+</body>
+</html>

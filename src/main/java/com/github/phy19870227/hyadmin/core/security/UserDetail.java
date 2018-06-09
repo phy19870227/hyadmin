@@ -1,4 +1,4 @@
-package com.github.phy19870227.hyadmin.security;
+package com.github.phy19870227.hyadmin.core.security;
 
 import com.github.phy19870227.hyadmin.config.SecurityConfig;
 import com.github.phy19870227.hyadmin.module.po.SysRole;
